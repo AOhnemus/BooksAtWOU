@@ -1,82 +1,20 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>Books@WOU</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-header {
-  border-style: groove;
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
-
-/* Container for flexboxes */
-section {
-  display: -webkit-flex;
-  display: flex;
-}
-
-/* Style the navigation menu */
-nav {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-/* Style the content */
-article {
-  -webkit-flex: 3;
-  -ms-flex: 3;
-  flex: 3;
-  background-color: #f1f1f1;
-  padding: 10px;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  section {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-}
-</style>
+<link rel = "stylesheet"
+	type = "text/css"
+	href = "style.css">
+</link>
 </head>
 <body>
 
 
 <header>
   <h2>Books@WOU</h2>
-  <h5>Your Resource for reading materials that cuts out the middle man.</h5>
+  <h5>Your resource for reading materials that cuts out the middle man.</h5>
 </header>
 
 <section>
@@ -90,17 +28,14 @@ footer {
   </nav>
   
   <article>
-    <h1>BrowseBooks for Sale</h1>
+    <h1>Browse Books for Sale by Subject</h1>
     <ul>
-      <li>Blah blah book</li>
-      <li>Random book</li>
-      <li>Another Book</li>
+      <li><a href="offers.html">All Subjects</a></li>
     </ul>
   </article>
 </section>
 
 <footer>
-  <p>Footer</p>
 </footer>
 
 </body>

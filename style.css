@@ -54,6 +54,48 @@ footer {
   text-align: center;
   color: white;
 }
+/* Form Style */ 
+form {
+    margin-top: 50px;
+    transition: all 4s ease-in-out;
+}
+.form-control { 
+    width: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    padding: 0;
+    text-align: center;
+    font family: sans-serif;
+    margin-bottom: 20px;        
+}
+
+input 
+{
+    height: 40px;
+}
+/* Form Submit Button */ 
+form .submit 
+{
+    text-align: center;
+    background: red;
+    border-color: grey;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 25px;
+    
+}
+form .submit:hover
+{
+    background-color: orangered;
+}
+
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {

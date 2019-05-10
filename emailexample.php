@@ -1,4 +1,7 @@
 <?php
+//Depreciated, remove later. Though, there's a few functions here I'm not familiar with that might be useful.
+//Currently my PHP that interacts with the MySQL server doesn't do anything to prevent bad input. -Aidan
+
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED

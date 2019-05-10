@@ -18,10 +18,10 @@
 <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="#">Make New Listing</a></li>
-      <li><a href="#">Search for Books</a></li>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="testForm.html">Make New Listing</a></li>
+<!--      <li><a href="#">Search for Books</a></li>-->
+<!--      <li><a href="#">FAQ</a></li>-->
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
 </nav>
 <main>

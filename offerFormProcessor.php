@@ -17,6 +17,5 @@ if ($_GET['action'] == 'create') {
 	);
 }
 mysqli_close($con);
-print ("TEST");
-//header('Location: testForm.html');
+header('Location: testForm.html');
 ?>

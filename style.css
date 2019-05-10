@@ -23,8 +23,19 @@ section {
   display: flex;
 }
 
+/*Main*/
+main {
+  margin-left: 150px;
+  padding: 0px 10px;
+}
+
 /* Style the navigation menu */
 nav {
+  height: 100%;
+  width:150px;
+  position:fixed;
+  z-index: 1;
+  overflow-x: hidden;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -45,6 +56,9 @@ article {
   flex: 3;
   background-color: #f1f1f1;
   padding: 10px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
 }
 
 /* Style the footer */

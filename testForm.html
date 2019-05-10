@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Books@WOU - Offers (PHP/SQL TEST)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+	type = "text/css"
+	href = "style.css">
+</link>
+</head>
+<body>
+
+
+<header>
+  <h2>Books@WOU</h2>
+  <h5>Your resource for reading materials that cuts out the middle man.</h5>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Make New Listing</a></li>
+      <li><a href="#">Search for Books</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+<main>  
+  <article>
+<!-- Source for guidance on using PHP with MySQL comes from this stackoverflow post:
+https://stackoverflow.com/questions/13673123/creating-unique-web-pages-from-mysql-database
+
+Thanks, cerd! Even though most of your info was outdated and I just went to W3 Schools, but it was a useful start.-->
+<!-- So this just... stopped working for some reason. -->
+<h3>Enter your book details here:</h3>
+<form action='offerFormProcessor.php' action='POST'>
+	<input type='hidden' name='action' value='create'/>
+	Title:	
+	<input type='text' name='title'/>
+	Author:
+	<input type='text' name='author'/>
+	Email:
+	<input type='text' name='posterEmail'/>
+	ISBN:
+	<input type='text' name='ISBN'/>
+	Price:
+	<input type='text' name='price'/>
+	<input type='submit' value='submit'>
+</form>
+
+  </article>
+</section>
+
+<footer>
+</footer>
+</main>
+</body>
+</html>

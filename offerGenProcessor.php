@@ -55,7 +55,13 @@ while($row = mysqli_fetch_assoc($output)) {
 	$posterEmail[] = $row['posterEmail'];
 	$ISBN[] = $row['ISBN'];
 	$implodeEmail = implode("",$posterEmail);
+	$sell = $row['sell'];
 
+	if ($sell == 1) {
+		print "<b>Sell Offer</b><br>";
+	} else {
+		print "<b>Buy Offer</b><br>";
+	}
 	print "<b>Book Title: </b>" . implode("",$title);
 	print "<b>     Author: </b>" . implode("",$author);
 	print "<b>     Price: </b>" . implode("",$price);

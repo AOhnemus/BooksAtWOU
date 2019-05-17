@@ -3,7 +3,7 @@
 /* Style the header */
 header {
   border-style: groove;
-  background-color: #666;
+  background-image: url("header-background.jpg");
   padding: 0px;
   text-align: center;
   font-size: 25px;

@@ -13,7 +13,14 @@ if ($_GET['action'] == 'create') {
 	$posterEmail = mysqli_real_escape_string($con, $_GET['posterEmail']);
 	$ISBN = mysqli_real_escape_string($con, $_GET['ISBN']);
 	$price = mysqli_real_escape_string($con, $_GET['price']);
-	mysqli_query($con,"INSERT INTO books (title, author, posterEmail, ISBN, price) VALUES ('$title', '$author', '$posterEmail', '$ISBN', '$price');"
+	$sell = $_GET['sell'];
+	if ($sell == 'sell') {
+		$sellBool = 1;
+		print ("Sell");
+	} else {
+		$sellBool = 0;
+	}
+	mysqli_query($con,"INSERT INTO books (title, author, posterEmail, ISBN, price, sell) VALUES ('$title', '$author', '$posterEmail', '$ISBN', '$price', $sellBool);"
 	);
 }
 mysqli_close($con);

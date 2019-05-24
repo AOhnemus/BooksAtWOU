@@ -42,12 +42,14 @@ if ($_GET['action'] == 'create') {
 $sql = "SELECT * FROM books";
 $output = mysqli_query($con, $sql);
 while($row = mysqli_fetch_assoc($output)) {
-	print "<article>";
+	print "<br>";
+	print '<div class="container">';
 	$title = array();
 	$author = array();
 	$price = array();
 	$posterEmail = array();
 	$ISBN = array();
+	$imgPath = array();
 
 	$title[] = $row['title'];
 	$author[] = $row['author'];
@@ -56,7 +58,9 @@ while($row = mysqli_fetch_assoc($output)) {
 	$ISBN[] = $row['ISBN'];
 	$implodeEmail = implode("",$posterEmail);
 	$sell = $row['sell'];
+	$imgPath = $row['imgPath'];
 
+	print '<img src="' . $imgPath . '" width="100">';
 	if ($sell == 1) {
 		print "<b>Sell Offer</b><br>";
 	} else {
@@ -73,8 +77,10 @@ while($row = mysqli_fetch_assoc($output)) {
 		print $value . " ";
 	}
 */
-	print "</article>";
+	print '</div>';
+	print "\n";
 }
+print '<br>';
 mysqli_close($con);
 ?>
 </main>

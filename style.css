@@ -5,17 +5,13 @@
 	
 
 /* Style the header */
-img {
-  width: 100%;
-  height: auto;
-}
 
 header {
   overflow: hidden;
 }
 header img {
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
 }
 
 body {
@@ -24,8 +20,8 @@ body {
 }
 
 main {
-	 padding-left: 10%;
-     padding-right: 10%;
+	 padding-left: 7%;
+    	 padding-right: 7%;
 }
 
 /*Contact Form */

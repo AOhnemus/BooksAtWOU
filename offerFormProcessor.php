@@ -63,6 +63,9 @@ if ($uploadOk == 0) {
 }
 
 if ($_POST['action'] == 'create') {
+
+	$subject = mysqli_real_escape_string($con, $_POST['subject']);
+	$year = mysqli_real_escape_string($con, $_POST['year']);
 	$title = mysqli_real_escape_string($con, $_POST['title']);
 	$author = mysqli_real_escape_string($con, $_POST['author']);
 	$posterEmail = mysqli_real_escape_string($con, $_POST['posterEmail']);
@@ -75,7 +78,7 @@ if ($_POST['action'] == 'create') {
 	} else {
 		$sellBool = 0;
 	}
-	mysqli_query($con,"INSERT INTO books (title, author, posterEmail, ISBN, price, sell, imgPath) VALUES ('$title', '$author', '$posterEmail', '$ISBN', '$price', $sellBool, '$target_file');"
+	mysqli_query($con,"INSERT INTO books (subject, year, title, author, posterEmail, ISBN, price, sell, imgPath) VALUES ('$subject', '$year', '$title', '$author', '$posterEmail', '$ISBN', '$price', $sellBool, '$target_file');"
 	);
 }
 

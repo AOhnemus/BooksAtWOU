@@ -4,7 +4,7 @@
 <title>Books@WOU</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 <link rel = "stylesheet"
         type = "text/css"
         href = "style.css">
@@ -14,14 +14,24 @@
 
 
 <header>
-  <h2>Books@WOU</h2>
-  <h5>Your resource for reading materials that cuts out the middle man.</h5>
+  <picture>
+    <source media="(max-width: 601px)"
+            srcset="sitesimages/Books@WOU.png">
+			
+	<source media="(min-width: 602px)"
+            srcset="siteimages/Desktopheadertest3.png">
+			
+    <source media="(min-width: 923px)"
+            srcset="siteimages/Desktopheader.png">
+			
+	<img src="images/header.png">
+  </picture>
 </header>
 <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="bookform.html">Make New Listing</a></li>
-<!--      <li><a href="#">Search for Books</a></li>-->
+      <li><a href="bookform.html">Make New Listing</a></li>	
+      <li><a href="searchform.html">Search For a Book</a></li>
 <!--      <li><a href="#">FAQ</a></li>-->
       <li><a href="contact.html">Contact Us</a></li>
     </ul>

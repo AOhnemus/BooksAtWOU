@@ -4,6 +4,7 @@
 <title> Books@WOU - Offers (PHP TEST)</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 <link rel = "stylesheet"
 	type = "text/css"
 	href = "style.css">
@@ -12,14 +13,27 @@
 <body>
 
 <header>
-  <h2>Books@WOU</h2>
-  <h5>Your resource for reading materials that cuts out the middle man.</h5>
+    <picture>
+    <source media="(max-width: 601px)"
+            srcset="siteimages/Books@WOU.png">
+			
+	<source media="(max-width: 922px)"
+          srcset="siteimages/Tabletheader.png">		
+			
+	<source media="(min-width: 602px)"
+            srcset="siteimages/Desktopheadertest3.png">
+			
+    <source media="(min-width: 923px)"
+            srcset="siteimages/Desktopheader.png">
+			
+	<img src="images/header.png">
+  </picture>
 </header>
 <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="bookform.html">Make New Listing</a></li>
-<!--      <li><a href="#">Search for Books</a></li>-->
+	<li><a href="searchform.html">Search For a Book</a></li>	
 <!--      <li><a href="#">FAQ</a></li>-->
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
@@ -44,6 +58,9 @@ $output = mysqli_query($con, $sql);
 while($row = mysqli_fetch_assoc($output)) {
 	print "<br>";
 	print '<div class="container">';
+
+	$subject = array();
+	$year = array();
 	$title = array();
 	$author = array();
 	$price = array();
@@ -51,6 +68,8 @@ while($row = mysqli_fetch_assoc($output)) {
 	$ISBN = array();
 	$imgPath = array();
 
+	$subject[] = $row['subject'];
+	$year[] = $row['year'];
 	$title[] = $row['title'];
 	$author[] = $row['author'];
 	$price[] = $row['price'];
@@ -60,17 +79,23 @@ while($row = mysqli_fetch_assoc($output)) {
 	$sell = $row['sell'];
 	$imgPath = $row['imgPath'];
 
+
 	print '<img src="' . $imgPath . '" width="100">';
 	if ($sell == 1) {
 		print "<b>Sell Offer</b><br>";
 	} else {
 		print "<b>Buy Offer</b><br>";
 	}
+
+	print "<b>Subject: </b>" . implode("",$subject);
+	print "<b>Year Published: </b>" . implode("",$year);
 	print "<b>Book Title: </b>" . implode("",$title);
 	print "<b>     Author: </b>" . implode("",$author);
 	print "<b>     Price: </b>" . implode("",$price);
 	print "<b>     ISBN: </b>" . implode("",$ISBN);
 	print "<b><br>Contact Email: </b> <a href=mailto:'$implodeEmail'> $implodeEmail</a>";
+
+	
 
 /*
 	foreach($row as $value) { //So, up until this point I've had to implode arrays to get them to display right. This here just... does it. No idea why but, hey, thanks function!

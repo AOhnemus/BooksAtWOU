@@ -1,16 +1,29 @@
 /* Style.css*/
 
 /* Style the header */
+
 header {
-  border-style: groove;
-  background-image: url("header-background.jpg");
-  padding: 0px;
-  text-align: center;
-  font-size: 25px;
-  color: white;
-  
+  overflow: hidden;
+}
+header img {
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
+body {
+	background-color: #2d5986;
+	 font-family: 'ABeeZee';
+}
+
+main {
+	 margin-left: 150px;
+     margin-right:150px;
+}
+
+/*main {
+	margin-left: 50 px;
+     margin-right:50 px;
+  }
 
 /*Contact Form */
 
@@ -67,7 +80,7 @@ input[type=submit]:hover {
 .container {
   border-radius: 5px;
   border-color: ffffff;
-  background-color: #f2f2f2;
+  background-color: #ded8d3;
   padding: 20px;
   
 }
@@ -77,7 +90,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #0c1a27;
 }
 
 li {
@@ -94,7 +107,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: #060d14 ;
 }
 
 .active {

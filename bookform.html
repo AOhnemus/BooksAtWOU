@@ -5,6 +5,7 @@
 <title>Books@WOU - Offers (PHP/SQL TEST)</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 <link rel = "stylesheet"
 	type = "text/css"
 	href = "style.css">
@@ -14,8 +15,21 @@
 
 
 <header>
-  <h2>Books@WOU</h2>
-  <h5>Your resource for reading materials that cuts out the middle man.</h5>
+  <picture>
+    <source media="(max-width: 601px)"
+            srcset="siteimages/Books@WOU.png">
+			
+	<source media="(max-width: 922px)"
+          srcset="siteimages/Tabletheader.png">		
+			
+	<source media="(min-width: 602px)"
+            srcset="siteimages/Desktopheadertest3.png">
+			
+    <source media="(min-width: 923px)"
+            srcset="siteimages/Desktopheader.png">
+			
+	<img src="images/header.png">
+  </picture>
 </header>
 
 <section>
@@ -23,7 +37,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="bookform.html">Make New Listing</a></li>
-<!--      <li><a href="#">Search for Books</a></li>-->
+      <li><a href="searchform.html">Search For a Book</a></li>
 <!--      <li><a href="#">FAQ</a></li>-->
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
@@ -40,8 +54,13 @@ Thanks, cerd! Even though most of your info was outdated and I just went to W3 S
 <div class="container" >
 <form action="offerFormProcessor.php" method="post" action="POST" enctype="multipart/form-data">
 	<input type='hidden' name='action' value='create'/>
+
+	Subject/Genre:
+	<input type='text' name='subject' placeholder="Book Subject or Genre.." required />
 	Title:	
 	<input type='text' name='title' placeholder="Book Title.." required />
+	Year Published:	
+	<input type='text' name='year' placeholder="Year Book was Published.." />
 	Author:
 	<input type='text' name='author' placeholder="Author.." required />
 	Email:
@@ -49,7 +68,7 @@ Thanks, cerd! Even though most of your info was outdated and I just went to W3 S
 	ISBN:
 	<input type='text' required pattern="[0-9]{10,13}" name='ISBN' placeholder="Valid ISBN.." required />
 	Price:
-	<input type='number' min="0.01" step="0.01" max="100000" name='price' placeholder="Desired Price for Sale or Purchase.." required />
+	<input type='number' step="0.01" max="100000" name='price' placeholder="Desired Price for Sale or Purchase.." required />
 <br>Is this an offer to buy a book, or sell it?
 	<input type='radio' name='sell' value='sell' checked>Sell
 	<input type='radio' name='sell' value='buy'>Buy

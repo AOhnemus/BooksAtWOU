@@ -10,23 +10,22 @@
 	href = "style.css">
 </link>
 </head>
+<main>
 <body>
 
 <header>
     <picture>
-    <source media="(max-width: 601px)"
-            srcset="siteimages/Books@WOU.png">
+    <source media="(max-width: 577px)"
+            srcset="siteimages/Mobileheader.png">
 			
 	<source media="(max-width: 922px)"
           srcset="siteimages/Tabletheader.png">		
 			
-	<source media="(min-width: 602px)"
+	<source media="(min-width: 923px)"
             srcset="siteimages/Desktopheadertest3.png">
 			
-    <source media="(min-width: 923px)"
-            srcset="siteimages/Desktopheader.png">
-			
-	<img src="images/header.png">
+    
+	<img src="siteimages/Desktopheadertest3.png">
   </picture>
 </header>
 <nav>
@@ -38,7 +37,6 @@
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
 </nav>
-<main>
 <?php
 /*Consider adding mysqli_real_escape_string functionality or something similar to prevent SQL attacks.
 Not really useful considering that nobody is going to bother with that, but, if I can get it working, why

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<main>
 <head>
 <!-- Developed by Aidan Ohnemus. Modified by Ben Roerig (Hope I spelled your name right. -aidan)-->
 <title>Books@WOU - Offers (PHP/SQL TEST)</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
-<link rel = "stylesheet"
-	type = "text/css"
-	href = "style.css">
-</link>
+<link rel = "stylesheet" type = "text/css" href = "style.css"> 
 </head>
 <body>
 
@@ -18,17 +16,21 @@
   <picture>
     <source media="(max-width: 601px)"
             srcset="siteimages/Books@WOU.png">
+    <source media="(max-width: 577px)"
+            srcset="Mobileheader.png">
 			
 	<source media="(max-width: 922px)"
-          srcset="siteimages/Tabletheader.png">		
+          srcset="Tabletheader.png">		
 			
-	<source media="(min-width: 602px)"
-            srcset="siteimages/Desktopheadertest3.png">
+	<source media="(min-width: 923px)"
+            srcset="Desktopheadertest3.png">
 			
     <source media="(min-width: 923px)"
             srcset="siteimages/Desktopheader.png">
 			
 	<img src="images/header.png">
+    
+	<img src="Desktopheadertest3.png">
   </picture>
 </header>
 
@@ -43,7 +45,7 @@
     </ul>
   </nav>
 
-<main>  
+<!--<main>  
   <article>
 <!-- Source for guidance on using PHP with MySQL comes from this stackoverflow post:
 https://stackoverflow.com/questions/13673123/creating-unique-web-pages-from-mysql-database
@@ -54,8 +56,7 @@ Thanks, cerd! Even though most of your info was outdated and I just went to W3 S
 <div class="container" >
 <form action="offerFormProcessor.php" method="post" action="POST" enctype="multipart/form-data">
 	<input type='hidden' name='action' value='create'/>
-
-	Subject/Genre:
+	Subject/Genre:	
 	<input type='text' name='subject' placeholder="Book Subject or Genre.." required />
 	Title:	
 	<input type='text' name='title' placeholder="Book Title.." required />
@@ -68,8 +69,8 @@ Thanks, cerd! Even though most of your info was outdated and I just went to W3 S
 	ISBN:
 	<input type='text' required pattern="[0-9]{10,13}" name='ISBN' placeholder="Valid ISBN.." required />
 	Price:
-	<input type='number' step="0.01" max="100000" name='price' placeholder="Desired Price for Sale or Purchase.." required />
-<br>Is this an offer to buy a book, or sell it?
+	<input type='number' step="0.01" max="100000" name='price' placeholder="Desired Price for Sale or Purchase.." required /> <br>
+	Is this an offer to buy a book, or sell it?
 	<input type='radio' name='sell' value='sell' checked>Sell
 	<input type='radio' name='sell' value='buy'>Buy
     <input type="file" name="fileToUpload" id="fileToUpload">

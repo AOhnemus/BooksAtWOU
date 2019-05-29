@@ -1,6 +1,14 @@
 /* Style.css*/
 
+/*Book Entry Formatting*/
+
+	
+
 /* Style the header */
+img {
+  width: 100%;
+  height: auto;
+}
 
 header {
   overflow: hidden;
@@ -16,14 +24,9 @@ body {
 }
 
 main {
-	 margin-left: 150px;
-     margin-right:150px;
+	 padding-left: 10%;
+     padding-right: 10%;
 }
-
-/*main {
-	margin-left: 50 px;
-     margin-right:50 px;
-  }
 
 /*Contact Form */
 
@@ -107,16 +110,14 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #060d14 ;
+  background-color: #060d14;
 }
 
 .active {
   background-color: #4
 
 }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 
 /* Style the footer */

@@ -5,6 +5,12 @@
 /* Nav Bar Formatting*/
 
 /* Add a black background color to the top navigation bar */
+
+.advanced {
+	float: right;
+	font-size: 6px;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #0c1a27;
@@ -33,19 +39,38 @@
   color: white;
 }
 
- input.searchbar {
 
+.topnav .search-container {
   float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 3px;
-  margin-right: 16px;
-  font-size: 17px;
 }
 
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+input.searchbar {
+  padding: 6px;
+  margin-top: 3px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 3px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
 @media screen and (max-width: 577px) {
-  .topnav a, .topnav input[type=text] {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
     text-align: left;
@@ -53,10 +78,14 @@
     margin: 0;
     padding: 14px;
   }
+  
+}
+
+
   .topnav input[type=text] {
     border: 1px solid #ccc;
   }
-}
+
 
 /* Style the header */
 
@@ -140,9 +169,10 @@ input[type=submit]:hover {
 
 /* 2 column setting for index page */
 .columns {
+	border: 1px;
   box-sizing: border-box;  
   border-radius: 5px;
-  border-color: ffffff;
+  border-color: #ffffff;
   background-color: #ded8d3;
   padding: 20px;
 }
@@ -150,15 +180,15 @@ input[type=submit]:hover {
 .leftcolumn {
   width: 50%;
   float: left;
-  padding: 15px;
+  border-radius: 5px;
   border: 1px solid red;
   box-sizing: border-box;  
 }
 
 .rightcolumn {
   width: 50%;
-  float: left;
-  padding: 15px;
+  border-radius: 5px;
+float: left;
   border: 1px solid red;
     box-sizing: border-box;
 }
@@ -218,6 +248,7 @@ footer {
 }
 /* Form Style */ 
 form {
+	
     margin-top: 5px;
     
 }

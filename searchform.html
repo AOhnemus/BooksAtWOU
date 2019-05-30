@@ -5,6 +5,7 @@
 <title>Books@WOU - Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 <link rel = "stylesheet"
 	type = "text/css"
@@ -38,10 +39,13 @@
   <a class="active" a href="index.html">Home</a>
   <a href="bookform.html">Make New Listing</a>
   <a href="contact.html">Contact Us</a>
+  <div class="search-container">
   <form action="searchbar.php" method="post" >	
-  <input class="searchbar" type="text" placeholder="Search..">
-  <form>
+  <input class="searchbar" name='searchbar'  type="text" placeholder="Search..">
+  <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
 </div>
+	</div>
   </nav>
 
   
@@ -107,11 +111,11 @@
 	  <option value="other">Other</option>
     </select>
 	Title:	
-	<input type='text' name='searchtitle' placeholder="Book Title.." />
+	<input class='formbox' type='text' name='searchtitle' placeholder="Book Title.." />
 	Author:
-	<input type='text' name='searchauthor' placeholder="Author.." />
+	<input class='formbox'  type='text' name='searchauthor' placeholder="Author.." />
 	Year Published:
-	<input type='text' name='searchyear' placeholder="Year Book was Published.." />
+	<input class='formbox'  type='text' name='searchyear' placeholder="Year Book was Published.." />
 	Looking for Buy or Sell Offers?
 	<input type='radio' name='sell' value='sell' checked>Sell
 	<input type='radio' name='sell' value='buy'>Buy

@@ -5,6 +5,7 @@
 <title>Books@WOU - Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 <link rel = "stylesheet"
 	type = "text/css"
@@ -38,11 +39,13 @@
   <a class="active" a href="index.html">Home</a>
   <a href="bookform.html">Make New Listing</a>
   <a href="contact.html">Contact Us</a>
+<div class="search-container">
   <form action="searchbar.php" method="post" >
   <input class="searchbar" name='searchbar' type="text" placeholder="Search..">
-  <form>
+<button type="submit"><i class="fa fa-search"></i></button>  
+</form>
 </div>
-
+</div>
   </nav>
   
   <article>

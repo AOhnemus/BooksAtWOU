@@ -16,35 +16,38 @@
 
 <header>
   <picture>
-    <source media="(max-width: 601px)"
-            srcset="sitesimages/Books@WOU.png">
+    <source media="(max-width: 577px)"
+            srcset="siteimages/Mobileheader.png">
 			
-	<source media="(min-width: 602px)"
+	<source media="(max-width: 922px)"
+          srcset="siteimages/Tabletheader.png">		
+			
+	<source media="(min-width: 923px)"
             srcset="siteimages/Desktopheadertest3.png">
 			
-    <source media="(min-width: 923px)"
-            srcset="siteimages/Desktopheader.png">
-			
-	<img src="images/header.png">
+    
+	<img src="siteimages/Desktopheadertest3.png">
 
   </picture>
 </header>
 
 <section>
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bookform.html">Make New Listing</a></li>
-	  <li><a href="searchform.html">Search For a Book</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
+    <div class="topnav">
+  <a class="active" a href="index.html">Home</a>
+  <a href="bookform.html">Make New Listing</a>
+  <a href="contact.html">Contact Us</a>
+  <form action="searchbar.php" method="post" >	
+  <input class="searchbar" type="text" placeholder="Search..">
+  <form>
+</div>
   </nav>
 
 <main>  
   <article>
 
 <?php
-
+ 
 //connect  to the database 
 $con=mysqli_connect("localhost","website","","WOUBooks"); 
 
@@ -60,11 +63,12 @@ $searchtitle=$_POST['searchtitle'];
 $searchyear=$_POST['searchyear'];
 $searchsubject=$_POST['searchsubject'];
 $searchauthor=$_POST['searchauthor'];
+$searchsell=$POST['sell'];
 	   // if($searchtitle){  
 	 
 
 //-query  the database table 
-$sql="SELECT * FROM books WHERE title LIKE '%" . $searchtitle . "%' AND year LIKE '%" . $searchyear . "%' AND subject LIKE '%" . $searchsubject . "%' AND author LIKE '%" . $searchauthor . "%' AND sell LIKE '%" . $sell . "%'"; 
+$sql="SELECT * FROM books WHERE title LIKE '%" . $searchtitle . "%' AND year LIKE '%" . $searchyear . "%' AND subject LIKE '%" . $searchsubject . "%' AND author LIKE '%" . $searchauthor . "%' AND sell LIKE '%" . $searchsell . "%'"; 
 
 //-run  the query against the mysql query function 
 $result=mysqli_query($con, $sql); 

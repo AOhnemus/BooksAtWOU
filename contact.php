@@ -78,12 +78,15 @@ $headers = 'From: '.$email_from."\r\n".
 Thank You For Your Comment! A Member of Our Awesome Team Will Respond to You Within 24 hours!
 
 <nav>
-    <ul>
-	  <li><a href="index.html">Home</a></li>
-      <li><a href="bookform.html">Make New Listing</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav> 
+<div class="topnav">
+  <a class="active" a href="index.html">Home</a>
+  <a href="bookform.html">Make New Listing</a>
+  <a href="contact.html">Contact Us</a>
+  <form action="searchbar.php" method="post" >	
+  <input class="searchbar" type="text" placeholder="Search..">
+  <form>
+</div>
+</nav> 
  
 <?php
  

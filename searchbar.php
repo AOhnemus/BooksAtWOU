@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<title> Books@WOU - Offers (PHP TEST)</title>
+
+<title>Books@WOU - Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
@@ -13,9 +14,10 @@
 <main>
 <body>
 
+
 <header>
-    <picture>
-    <source media="(max-width: 577px)"
+  <picture>
+  	<source media="(max-width: 577px)"
             srcset="siteimages/Mobileheader.png">
 			
 	<source media="(max-width: 922px)"
@@ -26,38 +28,55 @@
 			
     
 	<img src="siteimages/Desktopheadertest3.png">
+
   </picture>
 </header>
-<nav>
-	<div class="topnav">
+
+<section>
+  <nav>
+	 <div class="topnav">
   <a class="active" a href="index.html">Home</a>
   <a href="bookform.html">Make New Listing</a>
   <a href="contact.html">Contact Us</a>
-  <form action="searchbar.php" method="post" >	
-  <input class="searchbar" type="text" placeholder="Search..">
+  <form action="searchbar.php" method="post" >
+  <input class="searchbar" name='searchbar' type="text" placeholder="Search..">
   <form>
 </div>
-</nav>
-<?php
-/*Consider adding mysqli_real_escape_string functionality or something similar to prevent SQL attacks.
-Not really useful considering that nobody is going to bother with that, but, if I can get it working, why
-not? Didn't do it for this sprint due to it being unnecessary. Limited time.*/
 
-$con=mysqli_connect("localhost","website","","WOUBooks");
+  </nav>
+  
+  <article>
+
+<?php
+
+//connect  to the database 
+$con=mysqli_connect("localhost","website","","WOUBooks"); 
+
 //Online?
 if ( mysqli_connect_errno() ) {
 	echo "MySQL failed to connect. " . mysqli_connect_error();
 }
 
-if ($_GET['action'] == 'create') {
+	
+// if(preg_match("^/[A-Za-z]+/", $_POST['searchtitle'])){
 
-}
-$sql = "SELECT * FROM books";
-$output = mysqli_query($con, $sql);
-while($row = mysqli_fetch_assoc($output)) {
-	print "<br>";
-	print '<div class="container">';
+$searchbar=$_POST['searchbar'];
+$searchsell=$_POST['sell'];
 
+	   // if($searchtitle){  
+	 
+
+//-query  the database table 
+$sql="SELECT * FROM books WHERE title LIKE '%" . $searchbar . "%' OR author LIKE '%" . $searchbar . "%'";
+//-run  the query against the mysql query function 
+$result=mysqli_query($con, $sql); 
+if($result){
+//-create  while loop and loop through result set 
+while($row=mysqli_fetch_array($result)){ 
+    print "<br>";
+    print '<div class="container">';
+
+	
 	$subject = array();
 	$year = array();
 	$title = array();
@@ -67,24 +86,25 @@ while($row = mysqli_fetch_assoc($output)) {
 	$ISBN = array();
 	$imgPath = array();
 
+
 	$subject[] = $row['subject'];
 	$year[] = $row['year'];
-	$title[] = $row['title'];
+        $title[] = $row['title'];
 	$author[] = $row['author'];
 	$price[] = $row['price'];
 	$posterEmail[] = $row['posterEmail'];
 	$ISBN[] = $row['ISBN'];
 	$implodeEmail = implode("",$posterEmail);
 	$sell = $row['sell'];
-	$imgPath = $row['imgPath'];
-
-
+	$imgPath = $row['imgPath'];	
+	
 	print '<img src="' . $imgPath . '" width="100">';
 	if ($sell == 1) {
 		print "<b>Sell Offer</b><br>";
 	} else {
 		print "<b>Buy Offer</b><br>";
 	}
+
 
 	print "<b>Subject: </b>" . implode("",$subject);
 	print "<b>Year Published: </b>" . implode("",$year);
@@ -93,18 +113,13 @@ while($row = mysqli_fetch_assoc($output)) {
 	print "<b>     Price: </b>" . implode("",$price);
 	print "<b>     ISBN: </b>" . implode("",$ISBN);
 	print "<b><br>Contact Email: </b> <a href=mailto:'$implodeEmail'> $implodeEmail</a>";
-
 	
-
-/*
-	foreach($row as $value) { //So, up until this point I've had to implode arrays to get them to display right. This here just... does it. No idea why but, hey, thanks function!
-		print $value . " ";
-	}
-*/
-	print '</div>';
+    print '</div>';
 	print "\n";
-}
-print '<br>';
+} 
+print "<br>";	 
+		}
+	  
 mysqli_close($con);
 ?>
 </main>
@@ -113,3 +128,5 @@ mysqli_close($con);
 </footer>
 </body>
 </html>
+
+

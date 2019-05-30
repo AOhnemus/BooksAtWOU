@@ -30,13 +30,14 @@
   </picture>
 </header>
 <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bookform.html">Make New Listing</a></li>	
-      <li><a href="searchform.html">Search For a Book</a></li>
-<!--      <li><a href="#">FAQ</a></li>-->
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
+   <div class="topnav">
+  <a class="active" a href="index.html">Home</a>
+  <a href="bookform.html">Make New Listing</a>
+  <a href="contact.html">Contact Us</a>
+  <form action="searchbar.php" method="post" >	
+  <input class="searchbar" type="text" placeholder="Search..">
+  <form>
+</div>
  </nav>
 
   <article>
@@ -44,11 +45,11 @@
   <div class="container">
 <form method="post" action="contact.php">
   <label for="fname">First Name</label>
-  <input  type="text" name="fname" placeholder="Your name..">
+  <input class='formbox'  type="text" name="fname" placeholder="Your name..">
   <label for="lname">Last Name</label>
-  <input type="text" name="lname" placeholder="Your last name..">
+  <input class='formbox'  type="text" name="lname" placeholder="Your last name..">
   <label for="email">Email Address</label>
-  <input  type="text" name="email" placeholder="Your email address">
+  <input class='formbox'  type="text" name="email" placeholder="Your email address">
 
  <label for="reason">Reason for Contacting Books@WOU</label>
   <select  name="reason">

@@ -84,6 +84,43 @@ input[type=submit]:hover {
   
 }
 
+/* 2 column setting for index page */
+.columns {
+  box-sizing: border-box;  
+  border-radius: 5px;
+  border-color: ffffff;
+  background-color: #ded8d3;
+  padding: 20px;
+}
+/* column settings for the index.html file */
+.leftcolumn {
+  width: 50%;
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+  box-sizing: border-box;  
+}
+
+.rightcolumn {
+  width: 50%;
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+    box-sizing: border-box;
+}
+/* Currently not active code. (row and column)
+Create two equal columns that sits next to each other */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+    padding: 10px;
+  padding: 10px; /* Should be removed. Only for demonstration */
+}  
+  
+
 ul {
   list-style-type: none;
   margin: 0;

@@ -178,8 +178,11 @@ input[type=submit]:hover {
  
 }
 /* column settings for the index.html file */
+h1 {
+	color: white;
+}
 h2{
-	font-color:white;
+	color: white;
 }
 .leftcolumn {
   width: 50%;

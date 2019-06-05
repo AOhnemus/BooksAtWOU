@@ -7,12 +7,43 @@
 <meta charset="utf-8">
 <meta name="description" content="Header file for the purpose of a login system">
 <meta name=viewport content="width=device-width, initial-scale=1">
-<title></title>
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel = "stylesheet" type = "text/css" href = "style.css"> 
 </head>
 <!--Written using help from a tutorial by mmtuts.
 https://www.youtube.com/watch?v=LC9GaXkdxF8-->
 <body>
-	<div>
+<header>
+<picture>
+
+    <source media="(max-width: 577px)"
+            srcset="siteimages/Mobileheader.png">
+
+	<source media="(max-width: 922px)"
+            srcset="siteimages/Tabletheader.png">
+
+    <source media="(min-width: 923px)"
+            srcset="siteimages/Desktopheadertest3.png">
+	<img src="siteimages/Desktopheadertest3.png">
+  </picture> </header>
+<section>
+  <nav>
+	<div class="topnav">
+  <a class="active" a href="index.php">Home</a>
+  <?php
+    if (isset($_SESSION['userId'])) {
+      echo '<a href="bookform.php">Make New Listing</a>';
+    }
+  ?>
+  <a href="contactUs.php">Contact Us</a>
+  <div class="search-container">
+  <form action="searchbar.php" method="post" >
+  <input class="searchbar" name='searchbar' type="text" placeholder="Search..">
+  <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+<a class="advanced" a href="searchform.php">Advanced Search</a>
 	<?php
 		if (isset($_SESSION['userId'])) {
 			echo '<form action="logoutHandle.php" method="post">
@@ -25,8 +56,9 @@ https://www.youtube.com/watch?v=LC9GaXkdxF8-->
 			</form><a href="signup.php">Signup</a>';
 		}
 	?>
-	</div>
-
+</div>
+</nav>
+</section>
 </body>
 </html>
 

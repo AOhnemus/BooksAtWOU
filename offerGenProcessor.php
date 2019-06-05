@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,36 +16,9 @@
 </head>
 <main>
 <body>
-
-<header>
-    <picture>
-    <source media="(max-width: 577px)"
-            srcset="siteimages/Mobileheader.png">
-			
-	<source media="(max-width: 922px)"
-          srcset="siteimages/Tabletheader.png">		
-			
-	<source media="(min-width: 923px)"
-            srcset="siteimages/Desktopheadertest3.png">
-			
-    
-	<img src="siteimages/Desktopheadertest3.png">
-  </picture>
-</header>
-<nav>
-	<div class="topnav">
-  <a class="active" a href="index.html">Home</a>
-  <a href="bookform.html">Make New Listing</a>
-  <a href="contact.html">Contact Us</a>
-<div class="search-container">
-  <form action="searchbar.php" method="post" >	
-  <input class="searchbar" name="searchbar"  type="text" placeholder="Search..">
-<button type="submit"><i class="fa fa-search"></i></button>
-
-  </form>
-</div>
-</div>
-</nav>
+<?php
+  require "header.php";
+?>
 <?php
 /*Consider adding mysqli_real_escape_string functionality or something similar to prevent SQL attacks.
 Not really useful considering that nobody is going to bother with that, but, if I can get it working, why
@@ -99,7 +75,7 @@ while($row = mysqli_fetch_assoc($output)) {
 	print "<b>     ISBN: </b>" . implode("",$ISBN);
 	print "<b><br>Contact Email: </b> <a href=mailto:'$implodeEmail'> $implodeEmail</a>";
 
-	
+
 
 /*
 	foreach($row as $value) { //So, up until this point I've had to implode arrays to get them to display right. This here just... does it. No idea why but, hey, thanks function!

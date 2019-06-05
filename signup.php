@@ -1,7 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Account Signup Page
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+<link rel = "stylesheet"
+	type = "text/css"
+	href = "style.css">
+</link>
+</head>
+<body>
 <?php
 require "header.php"
 ?>
-<h1>Signup</h1>
+<section>
+<article>
+<div class="container">
+<h1>Create an Account</h1>
 <?php
   if(isset($_GET['error']) || isset ($_GET['signup']) ) {
     if ($_GET['error'] == "emptyfields") {
@@ -30,6 +49,7 @@ require "header.php"
 <input type="password" name="pwdConfirm" placeholder="Confirm Password"><br>
 <button type="submit" name="signupSubmit">Signup</button>
 </form>
-<?php
-require "footer.php";
-?>
+</div></article>
+</section>
+</body>
+</html>

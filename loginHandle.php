@@ -9,13 +9,13 @@ if(isset($_POST['loginSubmit'])) {
   $mailuid = $_POST['mailuid'];
   $password = $_POST['pwd'];
   if ( empty($mailuid) || empty($password) ) {
-    header("Location: indexTest.php?error=emptyfields");
+    header("Location: index.php?error=emptyfields");
     exit();
   } else { 
     $sql = "SELECT * FROM users WHERE uid=? OR email=?;";
     $statement = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($statement, $sql)) {
-      header("Location: indexTest.php?error=sqlerror");
+      header("Location: index.php?error=sqlerror");
       exit();
 
 //Somewhere in 'ere, it's breakin'
@@ -26,27 +26,27 @@ if(isset($_POST['loginSubmit'])) {
       if ($row = mysqli_fetch_assoc($result)) {
 	$pwdCheck = password_verify( $password, $row['pwd'] );
 	if ($pwdCheck == false) {
-	  header("Location: indexTest.php?wrongpwd");
+	  header("Location: index.php?wrongpwd");
 	  //This is an else if in case something wonky happens. Having an "else, you get to log in" is unsafe.
 	} else if ($pwdCheck == true) {
 	  session_start();
 	  $_SESSION['userId'] = $row['id'];
 	  $_SESSION['userUid'] = $row['uid'];
 	  $_SESSION['userEmail'] = $row['email'];
-	  header("Location: indexTest.php?login=success");
+	  header("Location: index.php?login=success");
 	  exit();
 	} else {
-	  header("Location: indexTest.php?wrongpwd");
+	  header("Location: index.php?wrongpwd");
 	  exit();
 	}
       } else {
-	header("Location: indexTest.php?error=nouser");
+	header("Location: index.php?error=nouser");
 	exit();
       }
     }
   }
 } else {
-  header("Location: indexTest.php");
+  header("Location: index.php");
   exit();
 }
 ?>

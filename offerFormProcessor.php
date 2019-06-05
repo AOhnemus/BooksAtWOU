@@ -61,9 +61,10 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-
+if( empty( basename($_FILES["fileToUpload"]["name"]) )) {
+  $target_file = "";
+}
 if ($_POST['action'] == 'create') {
-
 	$subject = mysqli_real_escape_string($con, $_POST['subject']);
 	$year = mysqli_real_escape_string($con, $_POST['year']);
 	$title = mysqli_real_escape_string($con, $_POST['title']);
@@ -83,5 +84,5 @@ if ($_POST['action'] == 'create') {
 }
 
 mysqli_close($con);
-//header('Location: bookform.html');
+header('Location: bookform.php');
 ?>

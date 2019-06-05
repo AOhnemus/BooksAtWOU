@@ -63,13 +63,17 @@ $searchtitle=$_POST['searchtitle'];
 $searchyear=$_POST['searchyear'];
 $searchsubject=$_POST['searchsubject'];
 $searchauthor=$_POST['searchauthor'];
-$searchsell=$POST['sell'];
+$searchsell=$_POST['sell'];
 	   // if($searchtitle){  
-	 
+if($searchsell === 'sell') {
 
-//-query  the database table 
-$sql="SELECT * FROM books WHERE title LIKE '%" . $searchtitle . "%' AND year LIKE '%" . $searchyear . "%' AND subject LIKE '%" . $searchsubject . "%' AND author LIKE '%" . $searchauthor . "%' AND sell LIKE '%" . $searchsell . "%'"; 
+$sql="SELECT * FROM books WHERE title LIKE '%" . $searchtitle . "%' AND year LIKE '%" . $searchyear . "%' AND subject LIKE '%" . $searchsubject . "%' AND author LIKE '%" . $searchauthor . "%' AND sell = TRUE";
+}
 
+else {
+ 
+$sql="SELECT * FROM books WHERE title LIKE '%" . $searchtitle . "%' AND year LIKE '%" . $searchyear . "%' AND subject LIKE '%" . $searchsubject . "%' AND author LIKE '%" . $searchauthor . "%' AND sell = FALSE"; 
+}
 //-run  the query against the mysql query function 
 $result=mysqli_query($con, $sql); 
 if($result){

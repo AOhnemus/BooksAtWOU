@@ -67,10 +67,17 @@ $searchbar=$_POST['searchbar'];
 $searchsell=$_POST['sell'];
 
 	   // if($searchtitle){  
-	 
+if($searchsell === 'sell') {
 
-//-query  the database table 
-$sql="SELECT * FROM books WHERE title LIKE '%" . $searchbar . "%' OR author LIKE '%" . $searchbar . "%'";
+$sql="SELECT * FROM books WHERE title LIKE '%" . $searchbar . "%' OR author LIKE '%" . $searchbar . "%' AND sell = TRUE";
+}
+
+else {
+
+$sql="SELECT * FROM books WHERE title LIKE '%" . $searchbar . "%' OR author LIKE '%" . $searchbar . "%' AND sell = FALSE";
+}
+
+
 //-run  the query against the mysql query function 
 $result=mysqli_query($con, $sql); 
 if($result){

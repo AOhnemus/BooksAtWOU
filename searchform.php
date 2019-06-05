@@ -23,7 +23,7 @@
 ?>
   <article>
 
-<h3>Search for Book Listings by Title:</h3>
+<h2>Search for Book Listings by Title:</h2>
 <div class="container" >
 <form action="searchbook.php" method="post" id="searchform">
 

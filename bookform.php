@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['userId']) ) {
+    header("Location: index.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <main>
@@ -11,38 +18,9 @@
 <link rel = "stylesheet" type = "text/css" href = "style.css"> 
 </head>
 <body>
-
-
-<header>
-  <picture>
-    
-    <source media="(max-width: 577px)"
-            srcset="siteimages/Mobileheader.png">
-			
-	<source media="(max-width: 922px)"
-          srcset="siteimages/Tabletheader.png">		
-			
-	<source media="(min-width: 923px)"
-	 srcset="siteimages/Desktopheadertest3.png">
-    
-	<img src="siteimages/Desktopheadertest3.png">
-  </picture>
-</header>
-
-<section>
-  <nav>
-	<div class="topnav">
-  <a class="active" a href="index.html">Home</a>
-  <a href="bookform.html">Make New Listing</a>
-  <a href="contact.html">Contact Us</a>
- <div class="search-container">
-  <form action="searchbar.php" method="post" >	
-  <input class="searchbar" name="searchbar"  type="text" placeholder="Search..">
-  <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
- </div>
-</div>
-  </nav> 
+<?php
+require "header.php";
+?>
   <article>
 <!-- Source for guidance on using PHP with MySQL comes from this stackoverflow post:
 https://stackoverflow.com/questions/13673123/creating-unique-web-pages-from-mysql-database
@@ -112,14 +90,14 @@ Thanks, cerd! Even though most of your info was outdated and I just went to W3 S
 	  <option value="other">Other</option>
     </select>
 
-	Title:	
+	Title:
 	<input class='formbox'  type='text' name='title' placeholder="Book Title.."  />
 	Year Published:	
 	<input class='formbox'  type='text' name='year' placeholder="Year Book was Published.." />
 	Author:
 	<input  class='formbox' type='text' name='author' placeholder="Author.."  />
-	Email:
-	<input type='email' name='posterEmail' placeholder="Valid Email Address.."  />
+
+	<input type='hidden' name='posterEmail' value='<?php echo $_SESSION['userEmail']; ?>'>
 	ISBN:
 	<input class='formbox' type='text' pattern="[0-9]{10,13}" name='ISBN' placeholder="Valid ISBN.." />
 	Price:
@@ -128,7 +106,8 @@ Thanks, cerd! Even though most of your info was outdated and I just went to W3 S
 	<input type='radio' name='sell' value='sell' checked>Sell
 	<input type='radio' name='sell' value='buy'>Buy
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input type="submit" value="Submit" name="submit">
+
 </form>
 </div>
   </article>

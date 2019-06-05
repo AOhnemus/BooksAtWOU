@@ -1,3 +1,7 @@
+
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,35 +18,9 @@
 <main>
 <body>
 
-
-<header>
-  <picture>
-    <source media="(max-width: 577px)"
-            srcset="siteimages/Mobileheader.png">
-			
-	<source media="(max-width: 922px)"
-          srcset="siteimages/Tabletheader.png">		
-			
-	<source media="(min-width: 923px)"
-            srcset="siteimages/Desktopheadertest3.png">
-			
-    
-	<img src="siteimages/Desktopheadertest3.png">
-  </picture>
-</header>
-<nav>
-   <div class="topnav">
-  <a class="active" a href="index.html">Home</a>
-  <a href="bookform.html">Make New Listing</a>
-  <a href="contact.html">Contact Us</a>
-  <div class="search-container">
-  <form action="searchbar.php" method="post" >	
-  <input class="searchbar" name='searchbar' type="text" placeholder="Search..">
-  <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-</div>
- </nav>
-
+<?php
+  require "header.php";
+?>
   <article>
     <h2>Reach out to us!</h2>
   <div class="container">

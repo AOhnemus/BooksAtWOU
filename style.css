@@ -178,6 +178,9 @@ input[type=submit]:hover {
  
 }
 /* column settings for the index.html file */
+h2{
+	font-color:white;
+}
 .leftcolumn {
   width: 50%;
   float: left;

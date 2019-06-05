@@ -27,7 +27,7 @@ https://stackoverflow.com/questions/13673123/creating-unique-web-pages-from-mysq
 
 Thanks, cerd! Even though most of your info was outdated and I just went to W3 Schools, but it was a useful start.-->
 <!-- So this just... stopped working for some reason. -->
-<h3>Enter your book details here:</h3>
+<h2>Enter your book details here:</h2>
 <div class="container" >
 <form action="offerFormProcessor.php" method="post" action="POST" enctype="multipart/form-data">
 	<input type='hidden' name='action' value='create'/>

@@ -40,6 +40,11 @@ https://www.youtube.com/watch?v=LC9GaXkdxF8-->
   <div class="search-container">
   <form action="searchbar.php" method="post" >
   <input class="searchbar" name='searchbar' type="text" placeholder="Search..">
+<select name='sell' class='barselect' >
+        <option value="buy">Looking For</option>
+        <option value="sell">For Sale</option>
+  </select>
+
   <button type="submit"><i class="fa fa-search"></i></button>
   </form>
 </div>
